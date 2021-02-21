@@ -14,7 +14,7 @@
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SY4-Ma-Vt7">
                                 <rect key="frame" x="112.5" y="258.5" width="150" height="150"/>
@@ -31,21 +31,26 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="SY4-Ma-Vt7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Mn8-8F-ZnF"/>
                             <constraint firstItem="SY4-Ma-Vt7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yGw-qh-w5G"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blueView" destination="SY4-Ma-Vt7" id="mu9-14-lzK"/>
+                        <outlet property="view" destination="SY4-Ma-Vt7" id="onL-EE-z1S"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="iV8-CX-R7e">
                     <connections>
                         <action selector="panAction:" destination="BYZ-38-t0r" id="maQ-eO-ij6"/>
                     </connections>
                 </panGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10" y="89"/>
+            <point key="canvasLocation" x="8.8000000000000007" y="88.605697151424295"/>
         </scene>
     </scenes>
     <resources>

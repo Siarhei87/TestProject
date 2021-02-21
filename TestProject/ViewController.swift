@@ -8,24 +8,50 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBAction func panAction(_ sender: UIPanGestureRecognizer) {
-        let translation = sender.translation(in: self.view)
-        if let view = sender.view{
-            view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y + translation.y)
-        }
-        sender.setTranslation(CGPoint.zero, in: self.view)
-    }
     
-    
-    
-    
+    @IBOutlet weak var blueView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
 
 
+    @IBAction func panAction(_ sender: UIPanGestureRecognizer) {
+        
+        let translation = sender.translation(in: self.view)
+
+            let newX = blueView.center.x + translation.x
+            let newY = blueView.center.y + translation.y
+            let senderWidth = blueView.bounds.width / 2
+            let senderHight = blueView.bounds.height / 2
+
+            if newX <= senderWidth
+            {
+                blueView.center = CGPoint(x: senderWidth, y: blueView.center.y + translation.y)
+            }
+            else if newX >= self.view.bounds.maxX - senderWidth
+            {
+                blueView.center = CGPoint(x: self.view.bounds.maxX - senderWidth, y: blueView.center.y + translation.y)
+            }
+            if newY <= senderHight
+            {
+                blueView.center = CGPoint(x: blueView.center.x + translation.x, y: senderHight)
+            }
+            else if newY >= self.view.bounds.maxY - senderHight
+            {
+                blueView.center = CGPoint(x: blueView.center.x + translation.x, y: self.view.bounds.maxY - senderHight)
+            }
+            else
+            {
+                blueView.center = CGPoint(x: blueView.center.x + translation.x, y: blueView.center.y + translation.y)
+            }
+
+        sender.setTranslation(CGPoint.zero, in: self.view)
+    }
 }
+
+
+
+
 
